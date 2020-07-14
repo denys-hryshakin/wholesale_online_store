@@ -1,0 +1,59 @@
+.b_c{
+    background-color: #22B573;
+}
+.container{
+    width: 1200px;
+    margin: 0 auto;
+}
+.header{
+    grid-area: header;
+    height: 100px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.logo{
+    font-size: 42pt;
+    font-weight: 550;
+}
+.searchBar{
+    margin-top: 5px;
+    display: flex;
+    align-items: center;
+}
+.searchBar input{
+    width: 385px;
+    height: 40px;
+    border-radius: 20px;
+    padding: 1px 45px 1px 10px;
+    border: 2px solid whitesmoke;
+}
+.searchBar input:focus{
+    outline: none;
+    border: 2px solid black;
+}
+.searchBar button{
+    cursor: pointer;
+    position: absolute;
+    right: 500px;
+    height: 46px;
+    border: none;
+    background-color: transparent;
+}
+.searchBar button:focus{
+    outline: none;
+}
+.searchBar button .icon{
+    font-size: 32px;
+    color: black;
+}
+.userFnBlock{
+    display: flex;
+}
+.iconBlock{
+    padding-right: 25px;
+}
+.icon{
+    font-size: 50px;
+    color: whitesmoke;
+}
