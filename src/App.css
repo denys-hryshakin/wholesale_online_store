@@ -1,14 +1,13 @@
 body{
   box-sizing: border-box;
-  background-color: whitesmoke;
+  background-color: white;
   margin: 0;
   padding: 0;
 }
 .app-wrapper{
   display: grid;
   grid-template-areas: 
-  "header"
-  "navbar";
+  "header";
   grid-template-rows: auto;
   grid-template-columns: auto;
 }
