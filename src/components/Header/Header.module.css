@@ -2,7 +2,7 @@
     BACKGROUND 
 */
 .bImage{
-    background: url('../../assets/images/header-image.jpg') no-repeat;
+    background: url('../../assets/images/header/header.jpg') no-repeat;
     background-size: 1550px;
     background-position: 0 -450px;
 }

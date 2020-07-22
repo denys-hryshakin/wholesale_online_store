@@ -53,18 +53,18 @@ nav > ul{
     transform: scaleX(0);
 }
 
-.mainMenu > li:hover .subMenu{
+.mainMenu>li:hover .subMenu{
     visibility: visible;
     opacity: 1;
     z-index: 1;
     transform: translateY(0);
     transition-delay: 0s, 0s, .3s;
 }
-.mainMenu > li:hover .icon{
+.mainMenu>li:hover .icon{
     color: #000000;
     transform: scaleY(-1);
 }
-.mainMenu > li:hover a::after{
+.mainMenu>li:hover a::after{
     opacity: 1;
     transform: scale(1);
 }
@@ -78,7 +78,7 @@ nav > ul{
 /* 
     ICONS 
 */
-.icon{
+.mainMenu>li>a>.icon{
     color: white;
     padding-left: 3px;
     font-size: 16px;
@@ -137,6 +137,16 @@ nav > ul{
     top: 0;
     left: 10px;
 }
+.subMenu>li>a>.subIcon{
+    position: absolute;
+    right: 0;
+    top: 35%;
+    transition: all .4s linear;
+}
+.subMenu>li:hover .subIcon{
+    color: #42c24d;
+    transform: scaleX(-1);
+}
 
 .brands>li>a{
     padding: 15px 10px 15px 70px !important;
@@ -149,6 +159,7 @@ nav > ul{
 */
 
 .superSubMenu{
+    text-align: center;
     display: flex;
     flex-wrap: wrap;
     margin: 0;
@@ -175,7 +186,7 @@ nav > ul{
     display: inline-block;
     width: 170.8725px;
     margin: 0 5px;
-    height: 240px;
+    height: 230px;
     transition: all .2s ease-in-out;
 }
 .superSubMenu>li:hover{
