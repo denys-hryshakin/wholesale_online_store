@@ -1,17 +1,22 @@
-import React from 'react';
+import React, { FC } from 'react';
 import { NavLink } from 'react-router-dom';
+import { CatalogSubMenuType } from '../../../redux/types/types';
 import Brands from './Brands/Brands';
 import Catalog from './Catalog/Catalog';
 import style from './Navbar.module.css';
 
-const Navbar = () => {
+type PropsType = {
+    submenu: Array<CatalogSubMenuType>
+}
+
+let Navbar: FC<PropsType> = ({submenu}) => {
     return (
         <div className={style.b_c}>
             <div className={style.container}>
                 <nav>
                     <ul className={style.mainMenu}>
                         <li><NavLink to="#">Главная</NavLink></li>
-                        <Catalog />
+                        <Catalog submenu={submenu} />
                         <Brands />
                         <li><NavLink to="#">Контакты</NavLink></li>
                         <li><NavLink to="#">О нас</NavLink></li>

@@ -1,17 +1,17 @@
 import React from 'react'
+import { Provider } from 'react-redux'
 import { BrowserRouter } from 'react-router-dom'
 import './App.css'
-import Header from './components/Header/Header'
+import HeaderContainer from './components/Header/HeaderContainer'
 import Home from './components/Home/Home'
-import { Provider } from 'react-redux'
-import store from './store/store'
+import store from './redux/store'
 
 function App() {
   return (
     <div className="app-wrapper">
       <BrowserRouter>
         <Provider store={store}>
-          <Header />
+          <HeaderContainer />
           <Home />
         </Provider>
       </BrowserRouter>

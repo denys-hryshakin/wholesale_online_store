@@ -1,17 +1,21 @@
 import { LogoutOutlined, SearchOutlined, ShoppingOutlined, UserOutlined } from '@ant-design/icons';
-import React from 'react';
-import style from './Header.module.css';
+import React, { FC } from 'react';
 import { NavLink } from 'react-router-dom';
+import { CatalogSubMenuType } from '../../redux/types/types';
+import style from './Header.module.css';
 import Navbar from './Navbar/Navbar';
 
-function Header() {
-    let logoName: string = "IDEAL-AUTO"
+type PropsType = {
+    submenu: Array<CatalogSubMenuType>
+}
+
+let Header: FC<PropsType> = ({submenu}) => {
     return (
         <div className={style.bImage}>
             <div className={style.b_c}>
                 <div className={style.container}>
                     <header className={style.header}>
-                        <div className={style.logo}>{logoName}</div>
+                        <div className={style.logo}>IDEAL-AUTO</div>
                         <form className={style.searchBar}>
                             <input type="text" placeholder="Search..." name="search" />
                             <button type="submit" title="Поиск!"><SearchOutlined className={style.icon} /></button>
@@ -28,7 +32,7 @@ function Header() {
                             </div>
                         </div>
                     </header>
-                    <Navbar />
+                    <Navbar submenu={submenu} />
                 </div>
             </div>
         </div>
