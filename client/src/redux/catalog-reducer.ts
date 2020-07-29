@@ -33,7 +33,7 @@ let initialState: CatalogType = {
             isSuperSubMenu: true,
             superSubMenu: [
                 { id: 1, name: "Ароматизаторы воздуха Little Trees", img: `${littleTreesMain}` },
-                { id: 2, name: "Освежители воздуха Eikosha", img: `${airFreshener}` }
+                { id: 2, name: "Освежители воздуха Eikosha", img: `${airFreshener}` },
             ]
         },
         {
@@ -97,7 +97,7 @@ let initialState: CatalogType = {
             name: "Автоаксессуары",
             isSuperSubMenu: true,
             superSubMenu: [
-                { id: 1, name: "Сумки органайзеры в авто", img: `${airFreshener}` }
+                { id: 1, name: "Сумки органайзеры в авто", img: `${airFreshener}` },
             ]
         },
         {

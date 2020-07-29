@@ -95,7 +95,7 @@ nav > ul{
     padding: 0;
     list-style: none;  
     min-width: 200px;
-    height: 451px;
+    height: 499px;
     background:whitesmoke;
     position: absolute;
     /* overflow-y: scroll; */
@@ -113,7 +113,7 @@ nav > ul{
 .subMenu a{
     display: block;
     color: black;
-    padding: 12px 16px;
+    padding: 15px 16px;
     text-decoration: none;
     font-size: 12pt;
     font-weight: 550;
@@ -177,11 +177,10 @@ nav > ul{
     padding: 0;
     list-style: none;  
     min-width: 747.5px;
-    height: 451px;
+    height: 499px;
     background:whitesmoke;
     position: absolute;
     overflow-y: scroll;
-    visibility: hidden;
     opacity: 0;
     top: 0;
     right: 0;
@@ -195,11 +194,15 @@ nav > ul{
 /* .superSubMenu>li:hover{
     background-color: #16bb2494;
 } */
+.superSubMenu a{
+    padding: 12px 16px;
+}
 .superSubMenu>li{
     display: inline-block;
     width: 170.8725px;
-    margin: 0 5px;
+    margin: 10px 5px;
     height: 230px;
+    padding: 0;
     transition: all .2s ease-in-out;
 }
 .superSubMenu>li:hover{
@@ -209,5 +212,5 @@ nav > ul{
 }
 
 .superSubMenu>li>a>img{
-    width: 145px;
+    width: 140px;
 }

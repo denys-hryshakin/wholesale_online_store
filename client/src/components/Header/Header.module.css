@@ -53,10 +53,10 @@
 .searchBar input:hover{
     box-shadow: 1px 1px 10px 1px rgb(32, 33, 36);
     border-color: rgba(223,225,229,0);
-    transform: scale(1.03, 1.03);
+    transform: scale(1.029, 1.029);
 }
 .searchBar:hover button{
-    transform: translateX(10px);
+    transform: translateX(7px);
 }  
 .searchBar input:focus{
     box-shadow: 0 2px 6px 0 rgb(32, 33, 36);
