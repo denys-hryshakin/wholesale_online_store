@@ -1,10 +1,11 @@
-export
+export { }
 const express = require('express');
+const controller = require('../controllers/submenu.controller')
 
 const router = express.Router();
 
-router.get('/', (req: any, res: { json: (arg0: string[]) => void; }) => {
-  res.json(['😀', '😳', '🙄']);
-});
+router.get('/', controller.findAllPagination)
+router.get('/all', controller.findAll)
+router.get('/test', controller.findTest)
 
 module.exports = router;
