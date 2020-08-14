@@ -6,10 +6,10 @@ import style from './Header.module.css';
 import Navbar from './Navbar/Navbar';
 
 type PropsType = {
-    submenu: Array<CatalogSubMenuType>
+    submenus: Array<CatalogSubMenuType>
 }
 
-let Header: FC<PropsType> = ({submenu}) => {
+let Header: FC<PropsType> = ({submenus}) => {
     return (
         <div className={style.bImage}>
             <div className={style.b_c}>
@@ -32,7 +32,7 @@ let Header: FC<PropsType> = ({submenu}) => {
                             </div>
                         </div>
                     </header>
-                    <Navbar submenu={submenu} />
+                    <Navbar submenus={submenus} />
                 </div>
             </div>
         </div>

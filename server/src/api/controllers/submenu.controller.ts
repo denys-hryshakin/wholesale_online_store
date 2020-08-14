@@ -1,6 +1,6 @@
 const models = require('../models')
 const Submenu = models.submenu
-const Op = models.Sequelize.Op
+const { Op } = require('sequelize')
 
 const statusOK = 200;
 const messageOK = 'OK';
@@ -32,9 +32,26 @@ exports.findAllPagination = async (req: any, res: any) => {
     }
 }
 
-exports.findAll = async (req: any, res: any)=>{
+exports.findAll = async (req: any, res: any) => {
     try {
         let data = await Submenu.findAll()
+        res.status(200).json({
+            method: 'GET',
+            status: statusOK,
+            message: messageOK,
+            totalCount: data.length,
+            items: data,
+        })
+    } catch (error) {
+        res.status(500).json({
+            message: messageError
+        })
+    }
+}
+
+exports.findSuperSubmenu = async (req: any, res: any) => {
+    try {
+        let data = await Submenu.findAll({ where: { parent_id: { [Op.ne]: 0 } } })
         res.status(200).json({
             method: 'GET',
             status: statusOK,
