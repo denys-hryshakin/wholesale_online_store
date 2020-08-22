@@ -6,25 +6,28 @@ import { CatalogSubMenuType } from '../../../../redux/types/types'
 import img from '../../../../assets/images/navbar/catalog/aral.svg'
 
 type PropsType = {
-    submenus: Array<CatalogSubMenuType>
+    subMenu: Array<CatalogSubMenuType>
 }
 
-let Catalog: FC<PropsType> = ({ submenus }) => {
+let Catalog: FC<PropsType> = ({ subMenu }) => {
     return (
         <li><NavLink to="#">Каталог<CaretDownOutlined className={style.icon} /></NavLink>
             <ul className={style.subMenu}>
-                {submenus.map(sm => <>
+                {subMenu.map(sm => <>
                     {
-                        sm.parent_id === null &&
-                        <li key={sm.id}><NavLink to="#">{sm.group_name}<CaretRightOutlined className={style.subIcon} /></NavLink>
+                        sm.isSuperSubMenu &&
+                        <li key={sm.id}><NavLink to="#">{sm.name}<CaretRightOutlined className={style.subIcon} /></NavLink>
                             <ul className={style.superSubMenu}>
-                                <li key={sm.id}><NavLink to="#"><img src={img} alt="" />{sm.group_name}</NavLink></li>
+                                {sm.superSubMenu.map(ssm =>
+                                    <li key={ssm.id}><NavLink to="#"><img src={ssm.img} alt="" />{ssm.name}</NavLink></li>
+                                )}
+                                <li key={sm.id}><NavLink to="#"><img src={img} alt="" />{sm.name}</NavLink></li>
                             </ul>
                         </li>
                     }
-                    {/* {
-                        sm.parent_id === null && <li><NavLink to="#">{sm.name}</NavLink></li>
-                    } */}
+                    {
+                        !sm.isSuperSubMenu && <li><NavLink to="#">{sm.name}</NavLink></li>
+                    }
                 </>)}
             </ul>
         </li >

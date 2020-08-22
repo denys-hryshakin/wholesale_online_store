@@ -6,6 +6,6 @@ const router = express.Router();
 
 router.get('/', controller.findAllPagination)
 router.get('/all', controller.findAll)
-router.get('/supersub', controller.findSuperSubmenu)
+router.get('/supersub/:parent_id', controller.findSuperSubmenu)
 
 module.exports = router;

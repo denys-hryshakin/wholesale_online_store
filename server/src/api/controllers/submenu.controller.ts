@@ -51,7 +51,8 @@ exports.findAll = async (req: any, res: any) => {
 
 exports.findSuperSubmenu = async (req: any, res: any) => {
     try {
-        let data = await Submenu.findAll({ where: { parent_id: { [Op.ne]: 0 } } })
+        const id = req.params.parent_id
+        let data = await Submenu.findAll({ where: { parent_id: id } })
         res.status(200).json({
             method: 'GET',
             status: statusOK,
