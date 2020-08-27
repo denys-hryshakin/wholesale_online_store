@@ -25,6 +25,7 @@ import wheels from '../assets/images/navbar/catalog/wheel.jpg';
 import xado from '../assets/images/navbar/catalog/xado.svg';
 import { CatalogType } from "./types/types";
 
+
 let initialState: CatalogType = {
     subMenu: [
         {

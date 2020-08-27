@@ -5,7 +5,6 @@ const controller = require('../controllers/submenu.controller')
 const router = express.Router();
 
 router.get('/', controller.findAllPagination)
-router.get('/all', controller.findAll)
-router.get('/supersub/:parent_id', controller.findSuperSubmenu)
+router.post('/', controller.postSubmenuItem)
 
 module.exports = router;

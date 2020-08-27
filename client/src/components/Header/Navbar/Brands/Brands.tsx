@@ -17,7 +17,7 @@ import { CaretDownOutlined } from '@ant-design/icons'
 
 function Brands() {
     return (
-        <li><NavLink to="#">Бренды<CaretDownOutlined className={style.icon} /></NavLink>
+        <li><NavLink to="/brands">Бренды<CaretDownOutlined className={style.icon} /></NavLink>
             <ul className={`${style.subMenu} ${style.brands}`}>
                 <li><NavLink to="#"><img src={carbi} alt="CarBi Logo" />CarBi</NavLink></li>
                 <li><NavLink to="#"><img src={eikosha} alt="Eikosha Logo" />Eikosha</NavLink></li>

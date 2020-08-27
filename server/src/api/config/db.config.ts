@@ -1,13 +1,3 @@
 module.exports = {
-    HOST: "localhost",
-    USER: "root",
-    PASSWORD: "1317129810Inspirer",
-    DB: "wholesale",
-    dialect: "mysql",
-    pool: {
-      max: 5,
-      min: 0,
-      acquire: 30000,
-      idle: 10000
-    }
-  };
+  mongoURI: "mongodb+srv://inspirer:1317129810@wholesale.h2pt1.mongodb.net/wholesale_online_shop?retryWrites=true&w=majority"
+};

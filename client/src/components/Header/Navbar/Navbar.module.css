@@ -1,21 +1,23 @@
 /* 
     MAIN 
 */
-.b_c{
+.b_c {
     background-color: transparent;
 }
-.container{
+
+.container {
     width: 1200px;
     margin: 0 auto;
 }
-nav > ul{
+
+nav>ul {
     display: flex;
     height: 50px;
     align-items: center;
     justify-content: space-around;
     margin: 0;
     padding: 0;
-    list-style: none;   
+    list-style: none;
 }
 
 
@@ -23,22 +25,25 @@ nav > ul{
 /* 
     MAIN MENU 
 */
-.mainMenu > li{
+.mainMenu>li {
     position: relative;
     cursor: pointer;
     padding: 11.5px 0px;
 }
-.mainMenu > li > a{
+
+.mainMenu>li>a {
     color: white;
     font-size: 16pt;
     font-weight: 630;
     text-decoration: none;
     transition: all .2s ease-in-out;
 }
-.mainMenu > li > a:hover{
+
+.mainMenu>li>a:hover {
     transform: scaleX(1)
 }
-.mainMenu > li > a::after{
+
+.mainMenu>li>a::after {
     content: "";
     display: block;
     position: absolute;
@@ -53,64 +58,69 @@ nav > ul{
     transform: scaleX(0);
 }
 
-.mainMenu>li:hover .subMenu{
+.mainMenu>li:hover .subMenu {
     visibility: visible;
     opacity: 1;
     z-index: 1;
     transform: translateY(0);
-    transition-delay: 0s, 0s, .3s;
+    transition-delay: .2s, 0s, .3s;
 }
-.mainMenu>li:hover .icon{
+
+.mainMenu>li:hover .icon {
     color: #000000;
     transform: scaleY(-1);
 }
-.mainMenu>li:hover a::after{
+
+.mainMenu>li:hover a::after {
     opacity: 1;
     transform: scale(1);
 }
 
 
-.mainMenu > li:nth-child(3) > .subMenu{
-    overflow-y: scroll;
-    min-width: 180px;
+.mainMenu>li:nth-child(3)>.subMenu {
+    /* overflow-y: scroll; */
+    width: 350px;
+    height: 350px;
+    display: flex;
+    flex-wrap: wrap;
 }
 
 /* 
     ICONS 
 */
-.mainMenu>li>a>.icon{
+.mainMenu>li>a>.icon {
     color: white;
     padding-left: 3px;
     font-size: 16px;
     transition: all .4s linear;
 }
 
-
 /* 
     SUBMENU 
 */
 
-.subMenu{
+.subMenu {
     margin: 0;
     padding: 0;
-    list-style: none;  
+    list-style: none;
     min-width: 200px;
     height: 499px;
-    background:whitesmoke;
+    background: whitesmoke;
     position: absolute;
     /* overflow-y: scroll; */
     visibility: hidden;
     opacity: 0;
     top: 100%;
     left: 0;
-    z-index: -1;
+    z-index: 1;
     border: 1px solid rgb(190, 190, 190);
     border-top: 0;
     box-shadow: 0px 10px 16px 0px rgba(0, 0, 0, 0.301);
-    transform: translateY(-3em);
-    transition: all .3s ease-in-out 0s, visibility 0s linear .1s, z-index 0s linear 0.01s;
+    transform: translateY(-1em);
+    transition: all .3s ease-in-out 0s, visibility .5s linear .1s, z-index 0s linear 0s;
 }
-.subMenu a{
+
+.subMenu a {
     display: block;
     color: black;
     padding: 15px 16px;
@@ -120,37 +130,45 @@ nav > ul{
     position: relative;
     transition: all .15s linear;
 }
-.subMenu>li{
-    transition: background-color .3s ease-in-out;
+
+.subMenu>li {
+    transition: background-color .4s ease-in-out;
 }
-.subMenu>li:hover{
+
+.subMenu>li:hover {
     background-color: #d4d4d4;
     /* background-color: #16bb2494; */
 }
-.subMenu>li:hover>.superSubMenu{
+
+.subMenu>li:hover>.superSubMenu {
     visibility: visible;
     opacity: 1;
     z-index: 1;
     transform: translateX(100%);
-    transition-delay: .2s, 0s, .3s;
+    transition-delay: .3s, 0s, .3s;
 }
-.subMenu>li>a>img{
+
+
+.subMenu>li>a>img {
     width: 50px;
     position: absolute;
     top: 0;
     left: 10px;
 }
-.subMenu>li>a>.subIcon{
+
+.subMenu>li>a>.subIcon {
     position: absolute;
     right: 0;
     top: 35%;
     transition: all .4s linear;
 }
-.subMenu>li:hover .subIcon{
+
+.subMenu>li:hover .subIcon {
     color: #16bb24;
     /* color: whitesmoke; */
     transform: scaleX(-1);
 }
+
 /* .subMenu>li:nth-child(2):hover .subIcon{
     color: coral;
 }
@@ -159,8 +177,9 @@ nav > ul{
 } */
 
 
-.brands>li>a{
+.brands>li>a {
     padding: 15px 10px 15px 70px !important;
+    width: 95px;
 }
 
 
@@ -169,35 +188,38 @@ nav > ul{
     SUBMENU 2ND LEVEL
 */
 
-.superSubMenu{
+.superSubMenu {
     text-align: center;
     display: flex;
     flex-wrap: wrap;
     margin: 0;
     padding: 0;
-    list-style: none;  
+    list-style: none;
     min-width: 747.5px;
     height: 499px;
-    background:whitesmoke;
+    background: whitesmoke;
     position: absolute;
     overflow-y: scroll;
     opacity: 0;
     top: 0;
     right: 0;
     z-index: -1;
-     border: 1px solid rgb(190, 190, 190);
+    border: 1px solid rgb(190, 190, 190);
     border-top: 0;
     box-shadow: 5px 5px 10px 0px rgba(0, 0, 0, 0.301);
-    transform: translateX(150%); /* 150% */
-    transition: all .4s ease-in-out 0s, visibility 0s linear .2s, z-index 0s linear 0.01s;
+    transform: translateX(150%);
+    /* 150% */
+    transition: all .3s ease-in-out 0s, visibility .5s linear .2s, z-index 0s linear 0.01s;
 }
+
 /* .superSubMenu>li:hover{
     background-color: #16bb2494;
 } */
-.superSubMenu a{
+.superSubMenu a {
     padding: 12px 16px;
 }
-.superSubMenu>li{
+
+.superSubMenu>li {
     display: inline-block;
     width: 170.8725px;
     margin: 10px 5px;
@@ -205,12 +227,13 @@ nav > ul{
     padding: 0;
     transition: all .2s ease-in-out;
 }
-.superSubMenu>li:hover{
+
+.superSubMenu>li:hover {
     transform: scale(1.02, 1.02);
     box-shadow: 1px 1px 10px 1px rgba(0, 0, 0, 0.301);
     border-radius: 5px;
 }
 
-.superSubMenu>li>a>img{
+.superSubMenu>li>a>img {
     width: 140px;
 }

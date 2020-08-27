@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { FC } from 'react'
 import { connect } from 'react-redux'
 import { getCatalogSubMenu } from '../../redux/header-selectors'
 import { AppStateType } from '../../redux/store'
@@ -15,14 +15,11 @@ type MapDispatchPropsType = {
 
 type PropsType = MapStatePropsType & MapDispatchPropsType
 
-class HeaderContainer extends React.Component<PropsType> {
-
-    render() {
-        return (
-            <Header
-                subMenu={this.props.subMenu} />
-        )
-    }
+let HeaderContainer: FC<PropsType> = (props) => {
+    return (
+        <Header
+            subMenu={props.subMenu} />
+    )
 }
 
 const mapStateToProps = (state: AppStateType): MapStatePropsType => {

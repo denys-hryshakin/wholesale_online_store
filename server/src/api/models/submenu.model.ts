@@ -1,33 +1,21 @@
-module.exports = (sequelize: any, Sequelize: any) => {
-    const Submenu = sequelize.define("submenu", {
-        id: {
-            type: Sequelize.INTEGER,
-            allowNull: false,
-            primaryKey: true,
-            autoIncrement: true,
-            unique: true
-        },
-        group_name: {
-            type: Sequelize.STRING,
-            allowNull: false,
-        },
-        parent_id: {
-            type: Sequelize.INTEGER
-        },
-        html_title: {
-            type: Sequelize.STRING
-        },
-        html_description: {
-            type: Sequelize.STRING
-        },
-        html_keywords: {
-            type: Sequelize.STRING
-        }
-    },
-        {
-            timestamps: false,
-        });
+const mongoose = require('mongoose')
 
-    Submenu.sync = () => Promise.resolve;
-    return Submenu;
-};
+const SubmenuSchema = mongoose.Schema({
+    groupName: { type: String, required: true },
+    isSuperSubMenu: { type: Boolean, default: false },
+    superSubMenu: [
+        {
+            id: { type: mongoose.Types.ObjectId },
+            subGroupName: { type: String, required: true },
+            img: { type: String, default: "null" },
+            html_title: { type: String, default: "null" },
+            html_description: { type: String, default: "null" },
+            html_keywords: { type: String, default: "null" }
+        }
+    ],
+    html_title: { type: String, default: "null" },
+    html_description: { type: String, default: "null" },
+    html_keywords: { type: String, default: "null" }
+})
+
+module.exports = mongoose.model('Submenu', SubmenuSchema)

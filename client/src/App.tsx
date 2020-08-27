@@ -1,6 +1,6 @@
 import React from 'react'
 import { Provider } from 'react-redux'
-import { BrowserRouter } from 'react-router-dom'
+import { BrowserRouter, Route } from 'react-router-dom'
 import './App.css'
 import HeaderContainer from './components/Header/HeaderContainer'
 import Home from './components/Home/Home'
@@ -12,7 +12,11 @@ function App() {
       <BrowserRouter>
         <Provider store={store}>
           <HeaderContainer />
-          <Home />
+          <div className="max-width">
+            <div className="app-wrapper-content">
+              <Route path="/home" component={Home} />
+            </div>
+          </div>
         </Provider>
       </BrowserRouter>
     </div>

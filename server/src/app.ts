@@ -18,10 +18,6 @@ app.use(bodyParser.urlencoded({ extended: true }))
 app.use(helmet())
 app.use(morgan('dev'))
 
-    export
-    const db = require('./api/models')
-    db.sequelize.sync()
-
 app.get('/', (_req: any, res: any) => {
     res.json({
         message: 'Hello!🦄🌈✨👋🌎🌍🌏✨🌈🦄'

@@ -1,6 +1,4 @@
-const models = require('../models')
-const Submenu = models.submenu
-const { Op } = require('sequelize')
+const Submenu = require('../models/submenu.model')
 
 const statusOK = 200;
 const messageOK = 'OK';
@@ -8,7 +6,7 @@ const statusError = 500;
 const messageError = 'Internal Server Error!'
 exports.findAllPagination = async (req: any, res: any) => {
     try {
-        let data = await Submenu.findAll()
+        let data = await Submenu.find()
         const page = req.query.page;
         const count = req.query.count;
         const startIndex = (page - 1) * count;
@@ -32,37 +30,35 @@ exports.findAllPagination = async (req: any, res: any) => {
     }
 }
 
-exports.findAll = async (req: any, res: any) => {
+exports.postSubmenuItem = async (req: any, res: any) => {
     try {
-        let data = await Submenu.findAll()
-        res.status(200).json({
-            method: 'GET',
+        await Submenu.findOne()
+        const newSubmenuItem = new Submenu({
+            groupName: req.body.groupName,
+            isSuperSubMenu: req.body.isSuperSubMenu,
+            superSubMenu: [
+                {
+                    subGroupName: req.body.superSubMenu.subGroupName,
+                    html_title: req.body.superSubMenu.html_title,
+                    html_description: req.body.superSubMenu.html_description,
+                    html_keywords: req.body.superSubMenu.html_keywords,
+                }
+            ],
+            html_title: req.body.html_title,
+            html_description: req.body.html_description,
+            html_keywords: req.body.html_keywords,
+        })
+        newSubmenuItem.save()
+        res.status(statusOK).json({
+            method: 'POST',
             status: statusOK,
             message: messageOK,
-            totalCount: data.length,
-            items: data,
         })
     } catch (error) {
-        res.status(500).json({
-            message: messageError
-        })
-    }
-}
-
-exports.findSuperSubmenu = async (req: any, res: any) => {
-    try {
-        const id = req.params.parent_id
-        let data = await Submenu.findAll({ where: { parent_id: id } })
-        res.status(200).json({
-            method: 'GET',
-            status: statusOK,
-            message: messageOK,
-            totalCount: data.length,
-            items: data,
-        })
-    } catch (error) {
-        res.status(500).json({
-            message: messageError
+        res.status(statusError).json({
+            status: statusError,
+            message: messageError,
+            error: error
         })
     }
 }
