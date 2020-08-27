@@ -1,9 +1,9 @@
 import React from 'react';
-import style from './Slider.module.css';
+import styles from './Slider.module.css';
 
 const Slider = () => {
     return (
-        <div className={style.box}>
+        <div className={styles.box}>
 
         </div>
     );

@@ -1,6 +1,6 @@
 import React from 'react'
 import { NavLink } from 'react-router-dom'
-import style from '../Navbar.module.css'
+import styles from '../Navbar.module.css'
 import carbi from '../../../../assets/images/navbar/catalog/carbi.svg'
 import eikosha from '../../../../assets/images/navbar/catalog/eikosha.svg'
 import kixx from '../../../../assets/images/navbar/catalog/kixx.svg'
@@ -15,10 +15,10 @@ import valvoline from '../../../../assets/images/navbar/catalog/valvoline.svg'
 import xado from '../../../../assets/images/navbar/catalog/xado.svg'
 import { CaretDownOutlined } from '@ant-design/icons'
 
-function Brands() {
+function BrandsMenu() {
     return (
-        <li><NavLink to="/brands">Бренды<CaretDownOutlined className={style.icon} /></NavLink>
-            <ul className={`${style.subMenu} ${style.brands}`}>
+        <li><NavLink to="/brands">Бренды<CaretDownOutlined className={styles.icon} /></NavLink>
+            <ul className={`${styles.subMenu} ${styles.brands}`}>
                 <li><NavLink to="#"><img src={carbi} alt="CarBi Logo" />CarBi</NavLink></li>
                 <li><NavLink to="#"><img src={eikosha} alt="Eikosha Logo" />Eikosha</NavLink></li>
                 <li><NavLink to="#"><img src={kixx} alt="Kixx Logo" />Kixx</NavLink></li>
@@ -36,4 +36,4 @@ function Brands() {
     )
 }
 
-export default Brands
+export default BrandsMenu

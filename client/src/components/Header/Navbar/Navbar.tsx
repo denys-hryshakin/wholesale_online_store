@@ -1,9 +1,9 @@
 import React, { FC } from 'react';
 import { NavLink } from 'react-router-dom';
 import { CatalogSubMenuType } from '../../../redux/types/types';
-import Brands from './Brands/Brands';
-import Submenu from './Catalog/Submenu/Submenu';
-import style from './Navbar.module.css';
+import BrandsMenu from './BrandsMenu/BrandsMenu';
+import CatalogMenu from './CatalogMenu/CatalogMenu';
+import styles from './Navbar.module.css';
 
 type PropsType = {
     subMenu: Array<CatalogSubMenuType>
@@ -11,13 +11,13 @@ type PropsType = {
 
 let Navbar: FC<PropsType> = ({ subMenu }) => {
     return (
-        <div className={style.b_c}>
-            <div className={style.container}>
+        <div className={styles.b_c}>
+            <div className={styles.container}>
                 <nav>
-                    <ul className={style.mainMenu}>
+                    <ul className={styles.mainMenu}>
                         <li><NavLink to="/home">Главная</NavLink></li>
-                        <Submenu subMenu={subMenu} />
-                        <Brands />
+                        <CatalogMenu subMenu={subMenu} />
+                        <BrandsMenu />
                         <li><NavLink to="/contacts">Контакты</NavLink></li>
                         <li><NavLink to="/about">О нас</NavLink></li>
                         <li><NavLink to="/delivery">Доставка и оплата</NavLink></li>

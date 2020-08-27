@@ -1,22 +1,22 @@
 import { CaretDownOutlined, CaretRightOutlined } from '@ant-design/icons'
 import React, { FC } from 'react'
 import { NavLink } from 'react-router-dom'
-import { CatalogSubMenuType } from '../../../../../redux/types/types'
-import style from '../../Navbar.module.css'
+import { CatalogSubMenuType } from '../../../../redux/types/types'
+import styles from '../Navbar.module.css'
 
 type PropsType = {
     subMenu: Array<CatalogSubMenuType>
 }
 
-let Submenu: FC<PropsType> = ({ subMenu }) => {
+let CatalogMenu: FC<PropsType> = ({ subMenu }) => {
     return (
-        <li><NavLink to="/catalog">Каталог<CaretDownOutlined className={style.icon} /></NavLink>
-            <ul className={style.subMenu}>
+        <li><NavLink to="/catalog">Каталог<CaretDownOutlined className={styles.icon} /></NavLink>
+            <ul className={styles.subMenu}>
                 {subMenu.map(sm => <>
                     {
                         sm.isSuperSubMenu &&
-                        <li key={sm.id}><NavLink to="#">{sm.name}<CaretRightOutlined className={style.subIcon} /></NavLink>
-                            <ul className={style.superSubMenu}>
+                        <li key={sm.id}><NavLink to="#">{sm.name}<CaretRightOutlined className={styles.subIcon} /></NavLink>
+                            <ul className={styles.superSubMenu}>
                                 {sm.superSubMenu.map(ssm =>
                                     <li key={ssm.id}><NavLink to="#"><img src={ssm.img} alt="" />{ssm.name}</NavLink></li>
                                 )}
@@ -32,4 +32,4 @@ let Submenu: FC<PropsType> = ({ subMenu }) => {
     )
 }
 
-export default Submenu
+export default CatalogMenu
