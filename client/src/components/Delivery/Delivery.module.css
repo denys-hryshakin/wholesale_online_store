@@ -1,5 +1,5 @@
 .main {
-    margin: 35px auto;
+    margin: 25px auto;
     max-width: 85%;
 }
 
@@ -11,7 +11,8 @@
 }
 
 .main h1 {
-    padding: 0 20px !important;
+    padding: 0 10px 0 20px !important;
+    margin: 15px 5px;
 }
 
 .main h3 {

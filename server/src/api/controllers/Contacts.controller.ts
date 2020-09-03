@@ -1,7 +1,5 @@
 export { }
-const DeliveryMethod = require('../models/Delivery/DeliveryMethod.model')
-const DeliveryPaymentMethod = require('../models/Delivery/DeliveryPaymentMethod.model')
-const DeliveryRegions = require('../models/Delivery/DeliveryRegions.model')
+const Contacts = require('../models/Contacts/Contacts.model')
 
 const statusOK = 200;
 const statusError = 500;
@@ -10,16 +8,12 @@ const messageError = 'Internal Server Error!'
 
 exports.findAll = async (req: any, res: any) => {
     try {
-        let dm = await DeliveryMethod.find()
-        let dpm = await DeliveryPaymentMethod.find()
-        let dr = await DeliveryRegions.find()
+        let data = await Contacts.find()
         res.status(statusOK).json({
             method: 'GET',
             status: statusOK,
             message: messageOK,
-            deliveryMethod: dm, 
-            deliveryPaymentMethod: dpm, 
-            deliveryRegions: dr,
+            items: data
         })
     } catch (error) {
         res.status(statusError).json({

@@ -17,6 +17,6 @@ body {
 .app-wrapper-content {
   grid-area: content;
   background-color: aliceblue;
-  max-width: 1200px;
+  width: 1200px;
   margin: 0 auto;
 }
