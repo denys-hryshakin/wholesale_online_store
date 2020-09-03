@@ -1,7 +1,7 @@
 import { CaretDownOutlined, CaretRightOutlined } from '@ant-design/icons'
 import React, { FC } from 'react'
 import { NavLink } from 'react-router-dom'
-import { CatalogSubMenuType } from '../../../../redux/types/types'
+import { CatalogSubMenuType } from '../../../../redux/types/catalog-types'
 import styles from '../Navbar.module.css'
 
 type PropsType = {
@@ -10,7 +10,7 @@ type PropsType = {
 
 let CatalogMenu: FC<PropsType> = ({ subMenu }) => {
     return (
-        <li><NavLink to="/catalog">Каталог<CaretDownOutlined className={styles.icon} /></NavLink>
+        <li><NavLink to="/catalog" activeClassName={styles.active}>Каталог<CaretDownOutlined className={styles.icon} /></NavLink>
             <ul className={styles.subMenu}>
                 {subMenu.map(sm => <>
                     {

@@ -1,10 +1,13 @@
 {
   "name": "wholesale_online_store",
   "version": "0.1.0",
-  "proxy": "http://localhost:4000/",
+  "proxy": "http://localhost:4000/api/v1",
   "private": true,
   "dependencies": {
     "@ant-design/icons": "^4.2.1",
+    "@material-ui/core": "^4.11.0",
+    "@material-ui/icons": "^4.9.1",
+    "@material-ui/styles": "^4.10.0",
     "@testing-library/jest-dom": "^4.2.4",
     "@testing-library/react": "^9.3.2",
     "@testing-library/user-event": "^7.1.2",
@@ -12,7 +15,6 @@
     "@types/node": "^12.0.0",
     "@types/react-dom": "^16.9.0",
     "@types/react-router-dom": "^5.1.5",
-    "antd": "^4.4.2",
     "axios": "^0.19.2",
     "react": "^16.13.1",
     "react-dom": "^16.13.1",

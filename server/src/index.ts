@@ -1,4 +1,4 @@
-export const app = require('./app')
+export const app = require('../App')
 const mongoose = require('mongoose')
 const port = process.env.PORT || 5000
 const dbConfig = require('./api/config/db.config').mongoURI

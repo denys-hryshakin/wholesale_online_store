@@ -1,9 +1,11 @@
 import { createStore, combineReducers, compose, applyMiddleware } from 'redux';
 import thunk from 'redux-thunk';
-import catalogReducer from './catalog-reducer'
+import catalogReducer from './reducers/catalog-reducer'
+import deliveryReducer from './reducers/delivery-reducer';
 
 let rootReducer = combineReducers({
     catalogPage: catalogReducer,
+    deliveryPage: deliveryReducer,
 })
 
 const initialState = {};

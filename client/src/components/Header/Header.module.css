@@ -25,7 +25,7 @@
 .header {
     grid-area: header;
     display: flex;
-    height: 100px;
+    height: 96px;
     align-items: center;
     justify-content: space-between;
 }
@@ -44,13 +44,17 @@
     display: flex;
     align-items: center;
     margin-top: 5px;
+    /* padding: 1px 45px 1px 10px; */
+    border-radius: 20px;
+    background-color: #ffffff;
 }
 
 .searchBar input {
     width: 385px;
-    height: 40px;
-    padding: 1px 45px 1px 10px;
-    border: 1px solid #dfe1e5;
+    height: 42px;
+    padding: 1px 5px 1px 10px;
+    /* border: 1px solid #dfe1e5; */
+    border: none;
     border-radius: 20px;
     transition: all .2s ease-out;
 }
@@ -58,24 +62,16 @@
 .searchBar input:hover {
     box-shadow: 1px 1px 10px 1px rgb(32, 33, 36);
     border-color: rgba(223, 225, 229, 0);
-    transform: scale(1.029, 1.029);
-}
-
-.searchBar:hover button {
-    transform: translateX(7px);
 }
 
 .searchBar input:focus {
-    box-shadow: 0 2px 6px 0 rgb(32, 33, 36);
-    outline: none;
+    box-shadow: 1px 1px 10px 1px rgb(32, 33, 36);
     border-color: rgba(223, 225, 229, 0);
+    outline: none;
 }
 
 .searchBar button {
     cursor: pointer;
-    position: absolute;
-    right: 500px;
-    height: 46px;
     border: none;
     background-color: transparent;
     transition: all .2s ease-out;
@@ -86,8 +82,13 @@
 }
 
 .searchBar button .icon {
-    font-size: 30px;
+    font-size: 32px;
     color: black;
+    transition: all .2s ease-in-out;
+}
+
+.searchBar button:hover .icon {
+    transform: scale(1.2, 1.2);
 }
 
 
@@ -114,8 +115,8 @@
     transform: scale(1.2, 1.2);
 }
 
-.icon {
+.iconBlock a .icon {
     color: whitesmoke;
     font-size: 50px;
-    transition: all .2s ease-in;
+    transition: all .2s ease-in-out;
 }

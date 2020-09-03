@@ -3,6 +3,7 @@
 */
 .b_c {
     background-color: transparent;
+    padding-bottom: 5px;
 }
 
 .container {
@@ -73,7 +74,7 @@ nav>ul {
 
 .mainMenu>li:hover a::after {
     opacity: 1;
-    transform: scale(1);
+    transform: scaleX(1);
 }
 
 
@@ -85,10 +86,15 @@ nav>ul {
     flex-wrap: wrap;
 }
 
+.mainMenu>li>a.active::after{
+    opacity: 1;
+    transform: scaleX(1);
+}
+
 /* 
     ICONS 
 */
-.mainMenu>li>a>.icon {
+.mainMenu>li>a .icon {
     color: white;
     padding-left: 3px;
     font-size: 16px;
@@ -110,14 +116,14 @@ nav>ul {
     /* overflow-y: scroll; */
     visibility: hidden;
     opacity: 0;
-    top: 100%;
+    top: 108%;
     left: 0;
     z-index: 1;
     border: 1px solid rgb(190, 190, 190);
     border-top: 0;
     box-shadow: 0px 10px 16px 0px rgba(0, 0, 0, 0.301);
     transform: translateY(-1em);
-    transition: all .3s ease-in-out 0s, visibility .5s linear .1s, z-index 0s linear 0s;
+    transition: all .3s ease-in-out 0s, visibility .2s linear .1s, z-index 0s linear 0s;
 }
 
 .subMenu a {
@@ -132,7 +138,7 @@ nav>ul {
 }
 
 .subMenu>li {
-    transition: background-color .4s ease-in-out;
+    transition: background-color .3s ease-in-out;
 }
 
 .subMenu>li:hover {
@@ -168,14 +174,6 @@ nav>ul {
     /* color: whitesmoke; */
     transform: scaleX(-1);
 }
-
-/* .subMenu>li:nth-child(2):hover .subIcon{
-    color: coral;
-}
-.subMenu>li:nth-child(4):hover .subIcon{
-    color: darkviolet;
-} */
-
 
 .brands>li>a {
     padding: 15px 10px 15px 70px !important;

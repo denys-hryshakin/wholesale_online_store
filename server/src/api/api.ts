@@ -1,16 +1,16 @@
-export
+export { };
 const express = require('express')
 
-const submenu = require('./routes/submenu.route')
+const Delivery = require('./routes/Delivery.route')
 
 const router = express.Router()
 
-router.get('/', (_req: any, res: { json: (arg0: { message: string }) => void })=>{
+router.get('/', (_req: any, res: { json: (arg0: { message: string }) => void }) => {
     res.json({
         message: 'Welcome to the API!'
     })
 })
 
-router.use('/submenu', submenu)
+router.use('/delivery', Delivery)
 
 module.exports = router

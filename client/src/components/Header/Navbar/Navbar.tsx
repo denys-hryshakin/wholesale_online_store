@@ -1,6 +1,6 @@
 import React, { FC } from 'react';
 import { NavLink } from 'react-router-dom';
-import { CatalogSubMenuType } from '../../../redux/types/types';
+import { CatalogSubMenuType } from '../../../redux/types/catalog-types';
 import BrandsMenu from './BrandsMenu/BrandsMenu';
 import CatalogMenu from './CatalogMenu/CatalogMenu';
 import styles from './Navbar.module.css';
@@ -15,12 +15,12 @@ let Navbar: FC<PropsType> = ({ subMenu }) => {
             <div className={styles.container}>
                 <nav>
                     <ul className={styles.mainMenu}>
-                        <li><NavLink to="/home">Главная</NavLink></li>
+                        <li><NavLink activeClassName={styles.active} to="/home">Главная</NavLink></li>
                         <CatalogMenu subMenu={subMenu} />
                         <BrandsMenu />
-                        <li><NavLink to="/contacts">Контакты</NavLink></li>
-                        <li><NavLink to="/about">О нас</NavLink></li>
-                        <li><NavLink to="/delivery">Доставка и оплата</NavLink></li>
+                        <li><NavLink to="/contacts" activeClassName={styles.active}>Контакты</NavLink></li>
+                        <li><NavLink to="/about" activeClassName={styles.active}>О нас</NavLink></li>
+                        <li><NavLink to="/delivery" activeClassName={styles.active}>Доставка и оплата</NavLink></li>
                     </ul>
                 </nav>
             </div>

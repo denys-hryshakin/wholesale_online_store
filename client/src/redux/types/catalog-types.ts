@@ -4,7 +4,6 @@ export type CatalogType = {
 export type CatalogSubMenuType = {
     id: number,
     name: string,
-    // parent_id?: number,
     isSuperSubMenu: boolean,
     superSubMenu: Array<CatalogSuperSubMenuType>
 }

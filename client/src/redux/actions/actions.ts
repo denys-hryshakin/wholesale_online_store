@@ -1,12 +1,36 @@
 import axios from 'axios'
 
-// export const catalogAPI = {
-//     getSubmenus() {
-//         return (
-//             axios.get(`http://localhost:4000/api/v1/submenu/all`)
-//                 .then((response: any) => {
-//                     return response.data
-//                 })
-//         );
-//     }
-// }
+export const deliveryPageAPI = {
+    getDeliveryMethod() {
+        return (
+            axios.get('/deliveryMethod')
+                .then((response: any) => {
+                    return response.data
+                })
+        )
+    },
+    getDeliveryPaymentMethod() {
+        return (
+            axios.get('/deliveryPaymentMethod')
+                .then((response: any) => {
+                    return response.data
+                })
+        )
+    },
+    getDeliveryRegions() {
+        return (
+            axios.get('/deliveryRegions')
+                .then((response: any) => {
+                    return response.data
+                })
+        )
+    },
+    getDelivery() {
+        return (
+            axios.get('/delivery')
+                .then((response: any) => {
+                    return response.data
+                })
+        )
+    }
+}
