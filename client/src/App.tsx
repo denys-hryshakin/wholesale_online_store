@@ -17,7 +17,6 @@ function App() {
       <BrowserRouter>
         <Provider store={store}>
           <HeaderContainer />
-          <div className="max-width">
             <div className="app-wrapper-content">
               <Route path="/home" component={Home} />
               <Route path="/catalog" component={Catalog} />
@@ -25,7 +24,6 @@ function App() {
               <Route path="/contacts" component={Contacts} />
               <Route path="/about" component={About} />
               <Route path="/delivery" component={Delivery} />
-            </div>
           </div>
         </Provider>
       </BrowserRouter>
