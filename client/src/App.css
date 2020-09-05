@@ -1,8 +1,8 @@
 body {
-  box-sizing: border-box;
-  background-color: white;
   margin: 0;
   padding: 0;
+  background: url("./assets/images/turtle-wax-logo.png") fixed;
+  background-size: 250px;
 }
 
 .app-wrapper {
@@ -10,12 +10,11 @@ body {
   grid-template-areas:
     "header"
     "content";
-  grid-template-rows: auto;
-  grid-template-columns: auto;
 }
 
 .app-wrapper-content {
   grid-area: content;
-  width: 1200px;
-  margin: 0 auto;
+  background-color: #ffffffc4;
+  min-height: 83.5vh;
+  padding-bottom: 40px;
 }

@@ -1,16 +1,14 @@
-import React, { FC } from 'react'
-import styles from './Catalog.module.css'
+import React, { FC } from "react";
+import styles from "./Catalog.module.css";
 
-type PropsType = {
-
-}
+type PropsType = {};
 
 const Catalog: FC<PropsType> = () => {
-    return (
-        <div className={styles.main}>
-            <h1>Catalog Page.</h1>
-        </div>
-    )
-}
+  return (
+    <div className={styles.main}>
+      <h1>Catalog Page.</h1>
+    </div>
+  );
+};
 
-export default Catalog
+export default Catalog;

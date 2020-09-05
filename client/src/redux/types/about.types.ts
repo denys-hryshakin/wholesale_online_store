@@ -1,7 +1,7 @@
 export type AboutType = {
-    about: Array<AboutInfoType>,
-}
+  about: Array<AboutInfoType>;
+};
 export type AboutInfoType = {
-    _id: number,
-    text: string,
-}
+  _id: number;
+  text: string;
+};

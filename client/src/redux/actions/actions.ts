@@ -1,32 +1,23 @@
-import axios from 'axios'
+import axios from "axios";
 
 export const deliveryPageAPI = {
-    getDelivery() {
-        return (
-            axios.get('/delivery')
-                .then((response: any) => {
-                    return response.data
-                })
-        )
-    }
-}
+  getDelivery() {
+    return axios.get("/delivery").then((response: any) => {
+      return response.data;
+    });
+  },
+};
 export const aboutPageAPI = {
-    getAboutInfo() {
-        return (
-            axios.get('/about')
-                .then((response: any) => {
-                    return response.data
-                })
-        )
-    }
-}
+  getAboutInfo() {
+    return axios.get("/about").then((response: any) => {
+      return response.data;
+    });
+  },
+};
 export const contactsPageAPI = {
-    getContacts() {
-        return (
-            axios.get('/contacts')
-                .then((response: any) => {
-                    return response.data
-                })
-        )
-    }
-}
+  getContacts() {
+    return axios.get("/contacts").then((response: any) => {
+      return response.data;
+    });
+  },
+};

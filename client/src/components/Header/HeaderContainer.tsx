@@ -1,31 +1,34 @@
-import React, { FC } from 'react'
-import { connect } from 'react-redux'
-import { getCatalogSubMenu } from '../../redux/selectors/header-selectors'
-import { AppStateType } from '../../redux/store'
-import { CatalogSubMenuType } from '../../redux/types/catalog-types'
-import Header from './Header'
+import React, { FC } from "react";
+import { connect } from "react-redux";
+import { getCatalogSubMenu } from "../../redux/selectors/header-selectors";
+import { AppStateType } from "../../redux/store";
+import { CatalogSubMenuType } from "../../redux/types/catalog-types";
+import Header from "./Header";
 
 type MapStatePropsType = {
-    subMenu: Array<CatalogSubMenuType>
-}
+  subMenu: Array<CatalogSubMenuType>;
+};
 
-type MapDispatchPropsType = {
+type MapDispatchPropsType = {};
 
-}
-
-type PropsType = MapStatePropsType & MapDispatchPropsType
+type PropsType = MapStatePropsType & MapDispatchPropsType;
 
 let HeaderContainer: FC<PropsType> = (props) => {
-    return (
-        <Header
-            subMenu={props.subMenu} />
-    )
-}
+  return <Header subMenu={props.subMenu} />;
+};
 
 const mapStateToProps = (state: AppStateType): MapStatePropsType => {
-    return {
-        subMenu: getCatalogSubMenu(state),
-    }
-}
+  return {
+    subMenu: getCatalogSubMenu(state),
+  };
+};
 
-export default connect<MapStatePropsType, MapDispatchPropsType, {}, AppStateType>(mapStateToProps, {})(HeaderContainer)
+export default connect<
+  MapStatePropsType,
+  MapDispatchPropsType,
+  {},
+  AppStateType
+>(
+  mapStateToProps,
+  {}
+)(HeaderContainer);

@@ -2,121 +2,113 @@
     BACKGROUND 
 */
 .bImage {
-    background: url('../../assets/images/header/header.jpg') no-repeat;
-    background-size: 1550px;
-    background-position: 0 -450px;
+  background: url("../../assets/images/header/header.jpg") no-repeat;
+  background-size: 1550px;
+  background-position: 0 -485px;
 }
 
 .b_c {
-    background: radial-gradient(circle at 50% 47%, #42c24d75, #008440);
-    box-shadow: 0 10px 10px rgba(0, 0, 0, 0.22);
+  background: radial-gradient(circle at 50% 47%, #3aad44c0, #008440);
+  box-shadow: 0 10px 10px rgba(0, 0, 0, 0.22);
 }
-
-
 
 /* 
     MAIN
 */
 .container {
-    width: 1200px;
-    margin: 0 auto;
+  width: 1500px;
+  margin: 0 auto;
 }
 
 .header {
-    grid-area: header;
-    display: flex;
-    height: 96px;
-    align-items: center;
-    justify-content: space-between;
+  grid-area: header;
+  display: flex;
+  height: 60px;
+  align-items: center;
+  justify-content: space-around;
 }
 
 .logo {
-    font-size: 42pt;
-    font-weight: 550;
+  font-size: 22pt;
+  font-weight: 550;
+  font-family: "Permanent Marker", cursive;
 }
-
-
 
 /* 
     SEARCH
 */
 .searchBar {
-    display: flex;
-    align-items: center;
-    margin-top: 5px;
-    /* padding: 1px 45px 1px 10px; */
-    border-radius: 20px;
-    background-color: #ffffff;
+  display: flex;
+  align-items: center;
+  border-radius: 20px;
+  background-color: #ffffff;
 }
 
 .searchBar input {
-    width: 385px;
-    height: 42px;
-    padding: 1px 5px 1px 10px;
-    /* border: 1px solid #dfe1e5; */
-    border: none;
-    border-radius: 20px;
-    transition: all .2s ease-out;
+  width: 260px;
+  height: 30px;
+  padding: 1px 5px 1px 10px;
+  border: none;
+  border-radius: 20px;
+  transition: all 0.2s ease-out;
 }
 
 .searchBar input:hover {
-    box-shadow: 1px 1px 10px 1px rgb(32, 33, 36);
-    border-color: rgba(223, 225, 229, 0);
+  box-shadow: 1px 1px 10px 1px rgb(32, 33, 36);
+  border-color: rgba(223, 225, 229, 0);
 }
 
 .searchBar input:focus {
-    box-shadow: 1px 1px 10px 1px rgb(32, 33, 36);
-    border-color: rgba(223, 225, 229, 0);
-    outline: none;
+  box-shadow: 1px 1px 10px 1px rgb(32, 33, 36);
+  border-color: rgba(223, 225, 229, 0);
+  outline: none;
 }
 
 .searchBar button {
-    cursor: pointer;
-    border: none;
-    background-color: transparent;
-    transition: all .2s ease-out;
+  cursor: pointer;
+  border: none;
+  background-color: transparent;
+  transition: all 0.2s ease-out;
 }
 
 .searchBar button:focus {
-    outline: none;
+  outline: none;
 }
 
 .searchBar button .icon {
-    font-size: 32px;
-    color: black;
-    transition: all .2s ease-in-out;
+  font-size: 27px;
+  color: black;
+  transition: all 0.2s ease-in-out;
 }
 
 .searchBar button:hover .icon {
-    transform: scale(1.2, 1.2);
+  transform: scale(1.2, 1.2);
 }
-
-
 
 /* 
     USER FUNCTIONS & ICONS
 */
 .userFnBlock {
-    display: flex;
+  display: flex;
 }
 
 .iconBlock {
-    position: relative;
-    padding-right: 25px;
+  position: relative;
+  padding-right: 10px;
 }
 
 .iconBlock a {
-    color: black;
+  color: black;
 }
 
 .iconBlock a:hover .icon {
-    display: block;
-    color: black;
-    transform: scale(1.2, 1.2);
+  display: block;
+  /* color: black; */
+  transform: scale(1.2, 1.2);
 }
 
 .iconBlock a .icon {
-    color: whitesmoke;
-    font-size: 50px;
-    transition: all .2s ease-in-out;
+  color: whitesmoke;
+  font-size: 35px;
+  transition: all 0.2s ease-in-out;
 }

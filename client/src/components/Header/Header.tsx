@@ -19,8 +19,9 @@ let Header: FC<PropsType> = ({ subMenu }) => {
         <div className={styles.container}>
           <header className={styles.header}>
             <div className={styles.logo}>IDEAL-AUTO</div>
+            <Navbar subMenu={subMenu} />
             <form className={styles.searchBar}>
-              <input type="text" placeholder="Search..." name="search" />
+              <input type="text" placeholder="Поиск..." name="search" />
               <button type="submit" title="Поиск!">
                 <SearchIcon className={styles.icon} />
               </button>
@@ -43,7 +44,6 @@ let Header: FC<PropsType> = ({ subMenu }) => {
               </div>
             </div>
           </header>
-          <Navbar subMenu={subMenu} />
         </div>
       </div>
     </div>
