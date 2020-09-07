@@ -9,8 +9,6 @@
 # production
 /build
 
-/src/api/config
-
 # misc
 .DS_Store
 .env

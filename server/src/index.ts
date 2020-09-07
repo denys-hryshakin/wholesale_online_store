@@ -2,10 +2,9 @@ export const app = require("../App");
 const mongoose = require("mongoose");
 require("dotenv").config();
 const port = process.env.PORT || 5000;
-const dbConfig = require("./api/config/db.config").mongoURI;
 
 mongoose
-  .connect(dbConfig, {
+  .connect(process.env.DB_CONNECTION, {
     useUnifiedTopology: true,
     useNewUrlParser: true,
     useCreateIndex: true,
