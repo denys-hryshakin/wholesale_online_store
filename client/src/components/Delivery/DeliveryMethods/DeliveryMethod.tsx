@@ -1,14 +1,15 @@
-import React from "react";
+import React, { FC } from "react";
 
-interface Props {
-  key: number;
+interface PropsType {
   name: string;
 }
 
-export const DeliveryMethod = (props: Props) => {
+let DeliveryMethod: FC<PropsType> = ({ name }) => {
   return (
     <ul>
-      <li>{props.name}</li>
+      <li>{name}</li>
     </ul>
   );
 };
+
+export default DeliveryMethod;

@@ -1,19 +1,18 @@
-import React from "react";
+import React, { FC } from "react";
 import { DeliveryAdditionsType } from "../../../redux/types/delivery.types";
 
-interface Props {
-  key: number;
+interface PropsType {
   name: string;
   additions?: Array<DeliveryAdditionsType>;
 }
 
-export const DeliveryPaymentMethod = (props: Props) => {
+let DeliveryPaymentMethod: FC<PropsType> = ({ name, additions }) => {
   return (
     <ul>
       <li>
-        {props.name}
+        {name}
         <ul>
-          {props.additions?.map((a) => (
+          {additions?.map((a) => (
             <li key={a._id}>{a.name}</li>
           ))}
         </ul>
@@ -21,3 +20,5 @@ export const DeliveryPaymentMethod = (props: Props) => {
     </ul>
   );
 };
+
+export default DeliveryPaymentMethod;

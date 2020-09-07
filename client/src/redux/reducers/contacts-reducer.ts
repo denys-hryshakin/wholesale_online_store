@@ -1,7 +1,7 @@
 import { ContactsType } from "../types/contacts.types";
 import { contactsPageAPI } from "../actions/actions";
 
-export const SET_CONTACTS = "GET-CONTACTS";
+export const SET_CONTACTS = "SET-CONTACTS";
 
 let initialState: ContactsType = {
   contacts: [],

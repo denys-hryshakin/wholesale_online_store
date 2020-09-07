@@ -2,7 +2,7 @@ import React from "react";
 import { Provider } from "react-redux";
 import { BrowserRouter, Route } from "react-router-dom";
 import "./App.css";
-import HeaderContainer from "./components/Header/HeaderContainer";
+import Header from "./components/Header/Header";
 import Home from "./components/Home/Home";
 import store from "./redux/store";
 import Catalog from "./components/Catalog/Catalog";
@@ -16,7 +16,7 @@ function App() {
     <div className="app-wrapper">
       <BrowserRouter>
         <Provider store={store}>
-          <HeaderContainer />
+          <Header />
           <div className="app-wrapper-content">
             <Route path="/home" component={Home} />
             <Route path="/catalog" component={Catalog} />

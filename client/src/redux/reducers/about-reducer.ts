@@ -1,7 +1,7 @@
 import { AboutType } from "../types/about.types";
 import { aboutPageAPI } from "../actions/actions";
 
-export const SET_ABOUT = "GET-ABOUT";
+export const SET_ABOUT = "SET-ABOUT";
 
 let initialState: AboutType = {
   about: [],

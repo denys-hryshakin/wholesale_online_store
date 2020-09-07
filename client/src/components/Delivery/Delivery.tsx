@@ -1,14 +1,17 @@
+// MATERIAL-UI Components
 import Accordion from "@material-ui/core/Accordion";
 import AccordionDetails from "@material-ui/core/AccordionDetails";
 import AccordionSummary from "@material-ui/core/AccordionSummary";
 import Breadcrumbs from "@material-ui/core/Breadcrumbs";
 import List from "@material-ui/core/List";
 import Typography from "@material-ui/core/Typography";
+// MATERIAL-UI Icons
+import CheckCircleOutlineIcon from "@material-ui/icons/CheckCircleOutline";
 import ExpandMoreIcon from "@material-ui/icons/ExpandMore";
 import HomeIcon from "@material-ui/icons/Home";
 import InfoOutlinedIcon from "@material-ui/icons/InfoOutlined";
 import LocalShippingIcon from "@material-ui/icons/LocalShipping";
-import CheckCircleOutlineIcon from "@material-ui/icons/CheckCircleOutline";
+// Default imports
 import React, { FC, useEffect } from "react";
 import { connect } from "react-redux";
 import { NavLink } from "react-router-dom";
@@ -25,9 +28,9 @@ import {
   DeliveryRegionsType,
 } from "../../redux/types/delivery.types";
 import styles from "./Delivery.module.css";
-import { DeliveryMethod } from "./DeliveryMethods/DeliveryMethod";
-import { DeliveryPaymentMethod } from "./DeliveryMethods/DeliveryPaymentMethod";
-import { DeliveryRegions } from "./DeliveryMethods/DeliveryRegions";
+import DeliveryMethod from "./DeliveryMethods/DeliveryMethod";
+import DeliveryPaymentMethod from "./DeliveryMethods/DeliveryPaymentMethod";
+import DeliveryRegions from "./DeliveryMethods/DeliveryRegions";
 
 type MapStatePropsType = {
   deliveryMethod: Array<DeliveryMethodType>;
@@ -41,24 +44,29 @@ type MapDispatchPropsType = {
 
 type PropsType = MapStatePropsType & MapDispatchPropsType;
 
-const Delivery: FC<PropsType> = (props) => {
-  let deliveryMethodElements = props.deliveryMethod.map((dm) => (
+const Delivery: FC<PropsType> = ({
+  deliveryMethod,
+  deliveryPaymentMethod,
+  deliveryRegions,
+  getDelivery,
+}) => {
+  let deliveryMethodElements = deliveryMethod.map((dm) => (
     <DeliveryMethod key={dm._id} name={dm.name} />
   ));
-  let deliveryPaymentMethodElements = props.deliveryPaymentMethod.map((dpm) => (
+  let deliveryPaymentMethodElements = deliveryPaymentMethod.map((dpm) => (
     <DeliveryPaymentMethod
       key={dpm._id}
       name={dpm.name}
       additions={dpm.additions}
     />
   ));
-  let deliveryRegionsElements = props.deliveryRegions.map((dr) => (
+  let deliveryRegionsElements = deliveryRegions.map((dr) => (
     <DeliveryRegions key={dr._id} name={dr.name} cities={dr.cities} />
   ));
 
   useEffect(() => {
     function getData() {
-      props.getDelivery();
+      getDelivery();
     }
     getData();
     // eslint-disable-next-line

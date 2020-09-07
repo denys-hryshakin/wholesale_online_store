@@ -1,9 +1,9 @@
 import { ListOfDeliveryType } from "../types/delivery.types";
 import { deliveryPageAPI } from "../actions/actions";
 
-export const SET_DELIVERY_METHOD = "GET-DELIVERY-METHOD";
-export const SET_DELIVERY_PAYMENT_METHOD = "GET-DELIVERY-PAYMENT-METHOD";
-export const SET_DELIVERY_REGIONS = "GET-DELIVERY-REGIONS";
+export const SET_DELIVERY_METHOD = "SET-DELIVERY-METHOD";
+export const SET_DELIVERY_PAYMENT_METHOD = "SET-DELIVERY-PAYMENT-METHOD";
+export const SET_DELIVERY_REGIONS = "SET-DELIVERY-REGIONS";
 
 let initialState: ListOfDeliveryType = {
   deliveryMethod: [],

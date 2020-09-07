@@ -4,12 +4,14 @@ import catalogReducer from "./reducers/catalog-reducer";
 import deliveryReducer from "./reducers/delivery-reducer";
 import aboutReducer from "./reducers/about-reducer";
 import contactsReducer from "./reducers/contacts-reducer";
+import brandsMenuReducer from "./reducers/brandsMenu-reducer";
 
 let rootReducer = combineReducers({
   catalogPage: catalogReducer,
   deliveryPage: deliveryReducer,
   aboutPage: aboutReducer,
   contactsPage: contactsReducer,
+  brandsMenu: brandsMenuReducer,
 });
 
 const initialState = {};

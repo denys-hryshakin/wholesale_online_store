@@ -4,12 +4,14 @@ import { CatalogSubMenuType } from "../../../redux/types/catalog-types";
 import BrandsMenu from "./BrandsMenu/BrandsMenu";
 import CatalogMenu from "./CatalogMenu/CatalogMenu";
 import styles from "./Navbar.module.css";
+import { BrandsMenuInfoType } from "../../../redux/types/brandsMenu.types";
 
 type PropsType = {
   subMenu: Array<CatalogSubMenuType>;
+  brandsMenu: Array<BrandsMenuInfoType>;
 };
 
-let Navbar: FC<PropsType> = ({ subMenu }) => {
+let Navbar: FC<PropsType> = ({ subMenu, brandsMenu }) => {
   return (
     <div className={styles.container}>
       <nav>
@@ -20,7 +22,7 @@ let Navbar: FC<PropsType> = ({ subMenu }) => {
             </NavLink>
           </li>
           <CatalogMenu subMenu={subMenu} />
-          <BrandsMenu />
+          <BrandsMenu brandsMenu={brandsMenu} />
           <li>
             <NavLink to="/contacts" activeClassName={styles.active}>
               Контакты

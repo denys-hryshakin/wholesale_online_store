@@ -1,19 +1,18 @@
-import React from "react";
+import React, { FC } from "react";
 import { DeliveryCitiesType } from "../../../redux/types/delivery.types";
 
-interface Props {
-  key: number;
+interface PropsType {
   name: string;
   cities?: Array<DeliveryCitiesType>;
 }
 
-export const DeliveryRegions = (props: Props) => {
+let DeliveryRegions: FC<PropsType> = ({ name, cities }) => {
   return (
     <ul>
       <li>
-        {props.name}
+        {name}
         <ul>
-          {props.cities?.map((c) => (
+          {cities?.map((c) => (
             <li key={c._id}>{c.name}</li>
           ))}
         </ul>
@@ -21,3 +20,5 @@ export const DeliveryRegions = (props: Props) => {
     </ul>
   );
 };
+
+export default DeliveryRegions;

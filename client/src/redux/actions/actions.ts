@@ -21,3 +21,10 @@ export const contactsPageAPI = {
     });
   },
 };
+export const brandsMenuAPI = {
+  getBrandsMenu() {
+    return axios.get("/brands_menu").then((response: any) => {
+      return response.data;
+    });
+  },
+};

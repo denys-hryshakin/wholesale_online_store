@@ -31,8 +31,8 @@ type MapDispatchPropsType = {
 
 type PropsType = MapStatePropsType & MapDispatchPropsType;
 
-const Contacts: FC<PropsType> = (props) => {
-  let contactsElements = props.contacts.map((c) => (
+const Contacts: FC<PropsType> = ({ contacts, getContacts }) => {
+  let contactsElements = contacts.map((c) => (
     <List key={c._id} className={styles.list}>
       <ListItem divider={true}>
         <ListItemIcon>
@@ -75,7 +75,7 @@ const Contacts: FC<PropsType> = (props) => {
 
   useEffect(() => {
     function getData() {
-      props.getContacts();
+      getContacts();
     }
     getData();
     // eslint-disable-next-line

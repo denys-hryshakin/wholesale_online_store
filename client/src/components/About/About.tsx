@@ -9,7 +9,7 @@ import { NavLink } from "react-router-dom";
 
 type PropsType = {};
 
-const About: FC<PropsType> = (props) => {
+const About: FC<PropsType> = () => {
   let text = (
     <div className={styles.text}>
       <p>
