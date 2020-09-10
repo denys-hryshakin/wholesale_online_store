@@ -1,5 +1,5 @@
 export {};
-const BrandsMenu = require("../models/BrandsMenu.model");
+const Brands = require("../models/Brands.model");
 require("dotenv").config();
 const multer = require("multer");
 const cloudinary = require("cloudinary").v2;
@@ -50,7 +50,7 @@ exports.addItem = (req: any, res: any, next: any) => {
 
     cloudinary.uploader.upload(
       path,
-      { public_id: `brandsMenu/${uniqueFilename}`, tags: `brandsMenu` }, // directory and tags are optional
+      { public_id: `brands/${uniqueFilename}`, tags: `brands` }, // directory and tags are optional
       function (err: any, image: any) {
         if (err) return res.send(err);
         console.log("file uploaded to Cloudinary");
@@ -59,8 +59,8 @@ exports.addItem = (req: any, res: any, next: any) => {
         fs.unlinkSync(path);
         // return image details
         res.json(image);
-        BrandsMenu.find({});
-        const newItem = new BrandsMenu({
+        Brands.find({});
+        const newItem = new Brands({
           name: req.body.name,
           image: image.secure_url,
           imageId: image.public_id,
@@ -73,7 +73,7 @@ exports.addItem = (req: any, res: any, next: any) => {
 
 exports.findAll = async (req: any, res: any) => {
   try {
-    let data = await BrandsMenu.find();
+    let data = await Brands.find();
     res.status(statusOK).json({
       method: "GET",
       status: statusOK,

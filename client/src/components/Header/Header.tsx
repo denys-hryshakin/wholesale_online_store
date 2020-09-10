@@ -1,34 +1,44 @@
+// Material-UI Icons
 import AccountBoxIcon from "@material-ui/icons/AccountBox";
 import ExitToAppIcon from "@material-ui/icons/ExitToApp";
 import SearchIcon from "@material-ui/icons/Search";
 import ShoppingCartTwoToneIcon from "@material-ui/icons/ShoppingCartTwoTone";
+// Default
 import React, { FC, useEffect } from "react";
 import { connect } from "react-redux";
 import { NavLink } from "react-router-dom";
-import { getBrandsMenu } from "../../redux/reducers/brandsMenu-reducer";
-import { getBrandsMenuState } from "../../redux/selectors/brandsMenu-selectors";
-import { getCatalogSubMenu } from "../../redux/selectors/header-selectors";
+import { getBrandsState } from "../../redux/selectors/header.selectors";
+import { getBrands } from "../../redux/reducers/brands.reducer";
+import { getCatalogMenu } from "../../redux/reducers/catalogMenu.reducer";
+import { getCatalogMenuState } from "../../redux/selectors/header.selectors";
 import { AppStateType } from "../../redux/store";
-import { BrandsMenuInfoType } from "../../redux/types/brandsMenu.types";
-import { CatalogSubMenuType } from "../../redux/types/catalog-types";
+import { BrandsMenuType } from "../../redux/types/brands.types";
+import { CatalogMenuType } from "../../redux/types/catalogMenu.types";
 import styles from "./Header.module.css";
 import Navbar from "./Navbar/Navbar";
 
 type MapStatePropsType = {
-  subMenu: Array<CatalogSubMenuType>;
-  brandsMenu: Array<BrandsMenuInfoType>;
+  catalogMenu: Array<CatalogMenuType>;
+  brands: Array<BrandsMenuType>;
 };
 
 type MapDispatchPropsType = {
-  getBrandsMenu: () => void;
+  getBrands: () => void;
+  getCatalogMenu: () => void;
 };
 
 type PropsType = MapStatePropsType & MapDispatchPropsType;
 
-let Header: FC<PropsType> = ({ subMenu, brandsMenu, getBrandsMenu }) => {
+let Header: FC<PropsType> = ({
+  catalogMenu,
+  brands,
+  getBrands,
+  getCatalogMenu,
+}) => {
   useEffect(() => {
     function getData() {
-      getBrandsMenu();
+      getBrands();
+      getCatalogMenu();
     }
     getData();
     // eslint-disable-next-line
@@ -39,7 +49,7 @@ let Header: FC<PropsType> = ({ subMenu, brandsMenu, getBrandsMenu }) => {
         <div className={styles.container}>
           <header className={styles.header}>
             <div className={styles.logo}>IDEAL-AUTO</div>
-            <Navbar subMenu={subMenu} brandsMenu={brandsMenu} />
+            <Navbar catalogMenu={catalogMenu} brands={brands} />
             <form className={styles.searchBar}>
               <input type="text" placeholder="Поиск..." name="search" />
               <button type="submit" title="Поиск!">
@@ -72,8 +82,8 @@ let Header: FC<PropsType> = ({ subMenu, brandsMenu, getBrandsMenu }) => {
 
 const mapStateToProps = (state: AppStateType): MapStatePropsType => {
   return {
-    subMenu: getCatalogSubMenu(state),
-    brandsMenu: getBrandsMenuState(state),
+    catalogMenu: getCatalogMenuState(state),
+    brands: getBrandsState(state),
   };
 };
 
@@ -82,4 +92,4 @@ export default connect<
   MapDispatchPropsType,
   {},
   AppStateType
->(mapStateToProps, { getBrandsMenu })(Header);
+>(mapStateToProps, { getBrands, getCatalogMenu })(Header);

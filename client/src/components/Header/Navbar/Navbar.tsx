@@ -1,17 +1,17 @@
 import React, { FC } from "react";
 import { NavLink } from "react-router-dom";
-import { CatalogSubMenuType } from "../../../redux/types/catalog-types";
+import { CatalogMenuType } from "../../../redux/types/catalogMenu.types";
 import BrandsMenu from "./BrandsMenu/BrandsMenu";
 import CatalogMenu from "./CatalogMenu/CatalogMenu";
 import styles from "./Navbar.module.css";
-import { BrandsMenuInfoType } from "../../../redux/types/brandsMenu.types";
+import { BrandsMenuType } from "../../../redux/types/brands.types";
 
 type PropsType = {
-  subMenu: Array<CatalogSubMenuType>;
-  brandsMenu: Array<BrandsMenuInfoType>;
+  catalogMenu: Array<CatalogMenuType>;
+  brands: Array<BrandsMenuType>;
 };
 
-let Navbar: FC<PropsType> = ({ subMenu, brandsMenu }) => {
+let Navbar: FC<PropsType> = ({ catalogMenu, brands }) => {
   return (
     <div className={styles.container}>
       <nav>
@@ -21,8 +21,8 @@ let Navbar: FC<PropsType> = ({ subMenu, brandsMenu }) => {
               Главная
             </NavLink>
           </li>
-          <CatalogMenu subMenu={subMenu} />
-          <BrandsMenu brandsMenu={brandsMenu} />
+          <CatalogMenu catalogMenu={catalogMenu} />
+          <BrandsMenu brands={brands} />
           <li>
             <NavLink to="/contacts" activeClassName={styles.active}>
               Контакты

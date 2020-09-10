@@ -21,9 +21,16 @@ export const contactsPageAPI = {
     });
   },
 };
-export const brandsMenuAPI = {
-  getBrandsMenu() {
-    return axios.get("/brands_menu").then((response: any) => {
+export const brandsAPI = {
+  getBrands() {
+    return axios.get("/brands").then((response: any) => {
+      return response.data;
+    });
+  },
+};
+export const catalogMenuAPI = {
+  getCatalogMenu() {
+    return axios.get("/catalog_menu").then((response: any) => {
       return response.data;
     });
   },

@@ -1,17 +1,19 @@
 import { createStore, combineReducers, compose, applyMiddleware } from "redux";
 import thunk from "redux-thunk";
-import catalogReducer from "./reducers/catalog-reducer";
-import deliveryReducer from "./reducers/delivery-reducer";
-import aboutReducer from "./reducers/about-reducer";
-import contactsReducer from "./reducers/contacts-reducer";
-import brandsMenuReducer from "./reducers/brandsMenu-reducer";
+import catalogReducer from "./reducers/catalogMenu.reducer";
+import deliveryReducer from "./reducers/delivery.reducer";
+import aboutReducer from "./reducers/about.reducer";
+import contactsReducer from "./reducers/contacts.reducer";
+import brandsReducer from "./reducers/brands.reducer";
+import catalogMenuReducer from "./reducers/catalogMenu.reducer";
 
 let rootReducer = combineReducers({
   catalogPage: catalogReducer,
   deliveryPage: deliveryReducer,
   aboutPage: aboutReducer,
   contactsPage: contactsReducer,
-  brandsMenu: brandsMenuReducer,
+  brands: brandsReducer,
+  catalogMenu: catalogMenuReducer,
 });
 
 const initialState = {};

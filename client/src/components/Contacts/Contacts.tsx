@@ -1,23 +1,25 @@
+// Material-Ui Components
 import Breadcrumbs from "@material-ui/core/Breadcrumbs";
 import List from "@material-ui/core/List";
 import ListItem from "@material-ui/core/ListItem";
 import ListItemIcon from "@material-ui/core/ListItemIcon";
 import ListItemText from "@material-ui/core/ListItemText";
 import Typography from "@material-ui/core/Typography";
+// Material-Ui Icons
 import AccountCircleIcon from "@material-ui/icons/AccountCircle";
 import ContactPhoneIcon from "@material-ui/icons/ContactPhone";
 import EmailIcon from "@material-ui/icons/Email";
 import HomeIcon from "@material-ui/icons/Home";
-import InfoOutlinedIcon from "@material-ui/icons/InfoOutlined";
 import LabelImportantIcon from "@material-ui/icons/LabelImportant";
 import LanguageIcon from "@material-ui/icons/Language";
 import LocationOnIcon from "@material-ui/icons/LocationOn";
 import PhoneIcon from "@material-ui/icons/Phone";
+// Default
 import React, { FC, useEffect } from "react";
 import { connect } from "react-redux";
 import { NavLink } from "react-router-dom";
-import { getContacts } from "../../redux/reducers/contacts-reducer";
-import { getContactsState } from "../../redux/selectors/contacts-selectors";
+import { getContacts } from "../../redux/reducers/contacts.reducer";
+import { getContactsState } from "../../redux/selectors/contacts.selectors";
 import { AppStateType } from "../../redux/store";
 import { ContactsInfoType } from "../../redux/types/contacts.types";
 import styles from "./Contacts.module.css";
@@ -93,10 +95,7 @@ const Contacts: FC<PropsType> = ({ contacts, getContacts }) => {
           Контакты
         </Typography>
       </Breadcrumbs>
-      <div className={styles.header}>
-        <h1>Контактная информация</h1>
-        <InfoOutlinedIcon className={styles.icon} />
-      </div>
+      <div className={styles.header}></div>
       {contactsElements}
     </div>
   );

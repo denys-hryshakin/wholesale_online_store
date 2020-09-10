@@ -2,14 +2,14 @@ import CaretDownOutlinedIcon from "@ant-design/icons/CaretDownOutlined";
 import CaretRightOutlinedIcon from "@ant-design/icons/CaretRightOutlined";
 import React, { FC } from "react";
 import { NavLink } from "react-router-dom";
-import { CatalogSubMenuType } from "../../../../redux/types/catalog-types";
+import { CatalogMenuType } from "../../../../redux/types/catalogMenu.types";
 import styles from "../Navbar.module.css";
 
 type PropsType = {
-  subMenu: Array<CatalogSubMenuType>;
+  catalogMenu: Array<CatalogMenuType>;
 };
 
-let CatalogMenu: FC<PropsType> = ({ subMenu }) => {
+let CatalogMenu: FC<PropsType> = ({ catalogMenu }) => {
   return (
     <li>
       <NavLink to="/catalog" activeClassName={styles.active}>
@@ -17,32 +17,32 @@ let CatalogMenu: FC<PropsType> = ({ subMenu }) => {
         <CaretDownOutlinedIcon className={styles.icon} />
       </NavLink>
       <ul className={styles.subMenu}>
-        {subMenu.map((sm) => (
-          <>
-            {sm.isSuperSubMenu && (
-              <li key={sm.id}>
+        {catalogMenu.map((sm) => (
+          <li key={sm._id}>
+            {sm.isSubMenu && (
+              <>
                 <NavLink to="#">
                   {sm.name}
                   <CaretRightOutlinedIcon className={styles.subIcon} />
                 </NavLink>
                 <ul className={styles.superSubMenu}>
-                  {sm.superSubMenu.map((ssm) => (
-                    <li key={ssm.id}>
+                  {sm.subMenu.map((ssm) => (
+                    <li key={ssm._id}>
                       <NavLink to="#">
-                        <img src={ssm.img} alt="" />
-                        {ssm.name}
+                        <img src={ssm.image} alt="" />
+                        {ssm.subName}
                       </NavLink>
                     </li>
                   ))}
                 </ul>
-              </li>
+              </>
             )}
-            {!sm.isSuperSubMenu && (
-              <li>
+            {!sm.isSubMenu && (
+              <>
                 <NavLink to="#">{sm.name}</NavLink>
-              </li>
+              </>
             )}
-          </>
+          </li>
         ))}
       </ul>
     </li>

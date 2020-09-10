@@ -14,7 +14,7 @@ body {
 
 .app-wrapper-content {
   grid-area: content;
-  background-color: #ffffffc4;
+  background-color: #ffffffd5;
   min-height: 83.5vh;
   padding-bottom: 40px;
 }

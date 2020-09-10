@@ -15,12 +15,12 @@ import LocalShippingIcon from "@material-ui/icons/LocalShipping";
 import React, { FC, useEffect } from "react";
 import { connect } from "react-redux";
 import { NavLink } from "react-router-dom";
-import { getDelivery } from "../../redux/reducers/delivery-reducer";
+import { getDelivery } from "../../redux/reducers/delivery.reducer";
 import {
   getDeliveryMethodState,
   getDeliveryPaymentMethodState,
   getDeliveryRegionsState,
-} from "../../redux/selectors/delivery-selectors";
+} from "../../redux/selectors/delivery.selectors";
 import { AppStateType } from "../../redux/store";
 import {
   DeliveryMethodType,

@@ -1,11 +1,11 @@
-import React, { FC } from "react";
-import styles from "./About.module.css";
-import InfoOutlinedIcon from "@material-ui/icons/InfoOutlined";
+import Breadcrumbs from "@material-ui/core/Breadcrumbs";
+import Typography from "@material-ui/core/Typography";
 import DescriptionIcon from "@material-ui/icons/Description";
 import HomeIcon from "@material-ui/icons/Home";
-import Typography from "@material-ui/core/Typography";
-import Breadcrumbs from "@material-ui/core/Breadcrumbs";
+import React, { FC } from "react";
 import { NavLink } from "react-router-dom";
+import about from "../../assets/images/Productpage KTM car.png";
+import styles from "./About.module.css";
 
 type PropsType = {};
 
@@ -19,15 +19,19 @@ const About: FC<PropsType> = () => {
         в нашей работе.
       </p>
       <p>
+        <br />
         Наша компания является официальным дилером продукции Turtle Wax и ещё
         нескольким направлениям автомобильных товаров, поэтому мы предлагаем вам
         постоянное наличие на складе и привлекательные цены для всех
-        покупателей, розничных и оптовых. Все наши товары очень высокого
-        качества, поэтому хорошо зарекомендовали себя среди профессионалов в
-        автомобильных вопросах и автолюбителей. Нашими клиентами уже являются
-        много автомагазинов, автомоек и автосервисов, потому что они понимают
-        как важно качество продукции в их деле, а также простых водителей,
-        которые любят свой автомобиль и покупают для него все самое лучшее.
+        покупателей, розничных и оптовых.
+        <br />
+        <br />
+        Все наши товары очень высокого качества, поэтому хорошо зарекомендовали
+        себя среди профессионалов в автомобильных вопросах и автолюбителей.
+        Нашими клиентами уже являются много автомагазинов, автомоек и
+        автосервисов, потому что они понимают как важно качество продукции в их
+        деле, а также простых водителей, которые любят свой автомобиль и
+        покупают для него все самое лучшее.
       </p>
       <h4>Добро пожаловать в наш автомагазин! Всегда рады вас видеть!</h4>
     </div>
@@ -44,11 +48,10 @@ const About: FC<PropsType> = () => {
           <DescriptionIcon className={styles.breadcrumbIcon} />О нас
         </Typography>
       </Breadcrumbs>
-      <div className={styles.header}>
-        <h1>О нас</h1>
-        <InfoOutlinedIcon className={styles.icon} />
+      <div className={styles.wrapper}>
+        {text}
+        <img src={about} alt="About-Img" />
       </div>
-      {text}
     </div>
   );
 };

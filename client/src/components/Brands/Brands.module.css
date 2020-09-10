@@ -1,0 +1,87 @@
+.main {
+  margin: 25px auto;
+}
+
+.wrap {
+  display: flex;
+  flex-wrap: wrap;
+  margin-top: 20px;
+}
+
+.item {
+  display: block;
+  text-align: center;
+  font-size: 20px;
+  margin: 10px;
+  border: 1px solid #156e1c;
+  border-radius: 5px;
+  background-color: #ffffff;
+  position: relative;
+}
+
+.item img {
+  height: 150px;
+  padding: 20px 20px 20px 20px;
+}
+
+.brandName {
+  position: absolute;
+  top: 75px;
+  left: 75px;
+  /* padding: 0 0 20px 0; */
+  opacity: 0;
+}
+
+.item:hover .brandName {
+  opacity: 1;
+}
+.item a {
+  text-decoration: none;
+  font-weight: 600;
+  color: black;
+}
+
+.item:hover {
+  background: rgb(0, 132, 64);
+  background: linear-gradient(
+    0deg,
+    rgba(0, 132, 64, 0.8830882694874825) 0%,
+    rgba(58, 173, 67, 0.8606793059020483) 100%
+  );
+}
+
+.item > a:hover {
+  opacity: 10%;
+}
+
+.item a:active {
+  color: -webkit-activeLink;
+}
+
+/* 
+    BREADCRUMBS
+  */
+
+.breadcrumbs {
+  background-color: transparent;
+  width: 1200px;
+  margin: 0 auto;
+}
+
+.link {
+  display: flex;
+  color: inherit;
+  text-decoration: none;
+}
+
+.link:hover {
+  text-decoration: underline;
+}
+
+.typography {
+  display: flex;
+}
+.breadcrumbIcon {
+  font-size: 15px;
+  margin-right: 5px;
+}
