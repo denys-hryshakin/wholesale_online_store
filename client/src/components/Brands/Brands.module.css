@@ -20,16 +20,16 @@
 }
 
 .item img {
-  height: 150px;
+  height: 156px;
   padding: 20px 20px 20px 20px;
 }
 
 .brandName {
-  position: absolute;
-  top: 75px;
-  left: 75px;
-  /* padding: 0 0 20px 0; */
   opacity: 0;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
 }
 
 .item:hover .brandName {
@@ -38,7 +38,7 @@
 .item a {
   text-decoration: none;
   font-weight: 600;
-  color: black;
+  color: #ffffff;
 }
 
 .item:hover {
