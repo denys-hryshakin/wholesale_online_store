@@ -58,12 +58,12 @@ let Header: FC<PropsType> = ({
             </form>
             <div className={styles.userFnBlock}>
               <div className={styles.iconBlock}>
-                <NavLink to="#" title="Корзина">
+                <NavLink to="/shopping-cart" title="Корзина">
                   <ShoppingCartTwoToneIcon className={styles.icon} />
                 </NavLink>
               </div>
               <div className={styles.iconBlock}>
-                <NavLink to="#" title="Настройки профиля">
+                <NavLink to="/profile" title="Настройки профиля">
                   <AccountBoxIcon className={styles.icon} />
                 </NavLink>
               </div>

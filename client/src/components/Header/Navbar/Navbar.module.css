@@ -66,20 +66,15 @@ nav > ul {
 }
 
 .mainMenu > li:nth-child(3) > .subMenu {
-  /* overflow-y: scroll; */
   width: 350px;
-  height: 350px;
+  height: 361px;
   display: flex;
   flex-wrap: wrap;
 }
 
-/* .mainMenu > li > a.active {
-  color: black;
-} */
 .mainMenu > li > a.active::after {
   opacity: 1;
   transform: scaleX(1);
-  /* background-color: #000000; */
 }
 
 /* 
@@ -104,7 +99,6 @@ nav > ul {
   height: 506px;
   background: whitesmoke;
   position: absolute;
-  /* overflow-y: scroll; */
   visibility: hidden;
   opacity: 0;
   top: 104%;
@@ -126,7 +120,7 @@ nav > ul {
   font-size: 12pt;
   font-weight: 550;
   position: relative;
-  transition: all 0.15s linear;
+  transition: all 0.1s linear;
 }
 
 .subMenu > li {
@@ -138,10 +132,11 @@ nav > ul {
   border: none;
 }
 
+.subMenu > li:hover > a {
+  color: #ffffff;
+}
+
 .subMenu > li:hover {
-  /* background-color: #d4d4d4; */
-  /* background-color: #16bb24a4; */
-  /* background-color: #16bb2494; */
   background: rgb(0, 132, 64);
   background: linear-gradient(
     0deg,
@@ -173,7 +168,6 @@ nav > ul {
 }
 
 .subMenu > li:hover .subIcon {
-  /* color: #16bb24; */
   color: whitesmoke;
   transform: scaleX(-1);
 }
@@ -198,7 +192,7 @@ nav > ul {
   padding: 0;
   list-style: none;
   min-width: 747.5px;
-  height: 499px;
+  height: 506px;
   background: whitesmoke;
   position: absolute;
   overflow-y: scroll;
@@ -210,16 +204,13 @@ nav > ul {
   border-top: 0;
   box-shadow: 5px 5px 10px 0px rgba(0, 0, 0, 0.301);
   transform: translateX(150%);
-  /* 150% */
   transition: all 0.3s ease-in-out 0s, visibility 0s linear 0s,
     z-index 0s linear 0.01s;
 }
 
-/* .superSubMenu>li:hover{
-    background-color: #16bb2494;
-} */
 .superSubMenu a {
   padding: 12px 16px;
+  transition: all 0.2s ease-out;
 }
 
 .superSubMenu > li {
@@ -235,13 +226,16 @@ nav > ul {
   transform: scale(1.02, 1.02);
   box-shadow: 1px 1px 10px 1px rgba(0, 0, 0, 0.301);
   border-radius: 5px;
-  /* background-color: #16bb24a4; */
   background: rgb(0, 132, 64);
   background: linear-gradient(
     0deg,
     rgba(0, 132, 64, 0.8830882694874825) 0%,
     rgba(58, 173, 67, 0.8606793059020483) 100%
   );
+}
+
+.superSubMenu > li:hover a {
+  color: #ffffff;
 }
 
 .superSubMenu > li > a > img {

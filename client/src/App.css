@@ -1,8 +1,8 @@
 body {
   margin: 0;
   padding: 0;
-  background: url("./assets/images/turtle-wax-logo.png") fixed;
-  background-size: 250px;
+  background: url("./assets/images/ideal.png") fixed;
+  background-size: 256px;
 }
 
 .app-wrapper {
@@ -15,6 +15,6 @@ body {
 .app-wrapper-content {
   grid-area: content;
   background-color: #ffffffd5;
-  min-height: 83.5vh;
+  min-height: 83.7vh;
   padding-bottom: 40px;
 }

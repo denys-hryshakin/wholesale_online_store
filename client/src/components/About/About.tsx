@@ -4,7 +4,8 @@ import DescriptionIcon from "@material-ui/icons/Description";
 import HomeIcon from "@material-ui/icons/Home";
 import React, { FC } from "react";
 import { NavLink } from "react-router-dom";
-import about from "../../assets/images/Productpage KTM car.png";
+// import about from "../../assets/images/Productpage KTM car.png";
+import about from "../../assets/images/ideal-1.png";
 import styles from "./About.module.css";
 
 type PropsType = {};
