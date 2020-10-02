@@ -17,11 +17,13 @@
   border-radius: 5px;
   background-color: #ffffff;
   position: relative;
+  transition: all 0.2s ease-in-out;
 }
 
 .item img {
   height: 157px;
   padding: 20px 20px 20px 20px;
+  transition: all 0.2s ease-in-out;
 }
 
 .item a {
@@ -36,6 +38,7 @@
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
+  transition: all 0.2s ease-in-out;
 }
 
 .item:hover .brandName {
@@ -43,7 +46,6 @@
 }
 
 .item:hover {
-  background: rgb(0, 132, 64);
   background: linear-gradient(
     0deg,
     rgba(0, 132, 64, 0.8830882694874825) 0%,

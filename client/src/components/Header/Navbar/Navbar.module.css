@@ -124,7 +124,7 @@ nav > ul {
 }
 
 .subMenu > li {
-  transition: all 0.3s ease-in-out;
+  transition: all 0.2s ease-in-out;
   border-bottom: 1px solid rgba(128, 128, 128, 0.514);
 }
 
@@ -132,17 +132,12 @@ nav > ul {
   border: none;
 }
 
-.subMenu > li:hover > a {
+/* .subMenu > li:hover > a {
   color: #ffffff;
-}
+} */
 
 .subMenu > li:hover {
-  background: rgb(0, 132, 64);
-  background: linear-gradient(
-    0deg,
-    rgba(0, 132, 64, 0.8830882694874825) 0%,
-    rgba(58, 173, 67, 0.8606793059020483) 100%
-  );
+  background-color: #9b9b9b88;
 }
 
 .subMenu > li:hover > .superSubMenu {
@@ -168,7 +163,7 @@ nav > ul {
 }
 
 .subMenu > li:hover .subIcon {
-  color: whitesmoke;
+  /* color: whitesmoke; */
   transform: scaleX(-1);
 }
 
@@ -210,7 +205,7 @@ nav > ul {
 
 .superSubMenu a {
   padding: 12px 16px;
-  transition: all 0.2s ease-out;
+  transition: all 0.2s ease-in-out;
 }
 
 .superSubMenu > li {
@@ -226,7 +221,6 @@ nav > ul {
   transform: scale(1.02, 1.02);
   box-shadow: 1px 1px 10px 1px rgba(0, 0, 0, 0.301);
   border-radius: 5px;
-  background: rgb(0, 132, 64);
   background: linear-gradient(
     0deg,
     rgba(0, 132, 64, 0.8830882694874825) 0%,

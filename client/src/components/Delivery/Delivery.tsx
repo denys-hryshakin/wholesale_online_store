@@ -9,7 +9,6 @@ import Typography from "@material-ui/core/Typography";
 import CheckCircleOutlineIcon from "@material-ui/icons/CheckCircleOutline";
 import ExpandMoreIcon from "@material-ui/icons/ExpandMore";
 import HomeIcon from "@material-ui/icons/Home";
-import InfoOutlinedIcon from "@material-ui/icons/InfoOutlined";
 import LocalShippingIcon from "@material-ui/icons/LocalShipping";
 // Default imports
 import React, { FC, useEffect } from "react";
@@ -93,16 +92,17 @@ const Delivery: FC<PropsType> = ({
           Доставка
         </Typography>
       </Breadcrumbs>
-      <div className={styles.header}>
-        <h1>Условия доставки и оплаты</h1>
-        <InfoOutlinedIcon className={styles.icon} />
-      </div>
+      <div className={styles.header}></div>
       <div className={styles.root}>
         <Accordion
           expanded={expanded === "panel1"}
           onChange={handleChange("panel1")}
         >
-          <AccordionSummary expandIcon={<ExpandMoreIcon />}>
+          <AccordionSummary
+            expandIcon={<ExpandMoreIcon />}
+            aria-controls="panel1a-content"
+            id="panel1a-header"
+          >
             <CheckCircleOutlineIcon />
             <h3>Способы доставки</h3>
           </AccordionSummary>
@@ -110,6 +110,7 @@ const Delivery: FC<PropsType> = ({
             <List>{deliveryMethodElements}</List>
           </AccordionDetails>
         </Accordion>
+
         <Accordion
           expanded={expanded === "panel2"}
           onChange={handleChange("panel2")}
@@ -126,6 +127,7 @@ const Delivery: FC<PropsType> = ({
             <List>{deliveryPaymentMethodElements}</List>
           </AccordionDetails>
         </Accordion>
+
         <Accordion
           expanded={expanded === "panel3"}
           onChange={handleChange("panel3")}

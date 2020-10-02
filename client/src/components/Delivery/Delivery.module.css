@@ -4,17 +4,7 @@
 }
 
 .header {
-  display: flex;
-  align-items: center;
-  background-color: #35b640;
-  border: 2px solid #156e1c;
-  border-radius: 20px 20px 0 0;
-  margin-top: 10px;
-}
-
-.main h1 {
-  padding: 0 10px 0 20px;
-  margin: 15px 5px;
+  margin-top: 20px;
 }
 
 .main h3 {
@@ -29,9 +19,8 @@
 .root {
   width: 1196px;
   background-color: #ffffff;
-  border-width: 0 2px 2px 2px;
-  border-style: solid;
-  border-color: #156e1c;
+  border-radius: 10px;
+  border: 2px solid #156e1c;
 }
 
 /* 
