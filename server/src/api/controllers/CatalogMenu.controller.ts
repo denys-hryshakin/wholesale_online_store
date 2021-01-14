@@ -9,7 +9,7 @@ const messageError = "Internal Server Error!";
 
 exports.findAll = async (req: any, res: any) => {
   try {
-    let data = await CatalogMenu.find();
+    let data = await CatalogMenu.find({});
     res.status(statusOK).json({
       method: "GET",
       status: statusOK,
